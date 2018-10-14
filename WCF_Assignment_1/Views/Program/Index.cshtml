@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <h2>Index</h2>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+    @using (Html.BeginForm("Index","Program",FormMethod.Get))
+    {
+        <div class="container">
+            <div class="form-inline">
+                <div class="form-group row">
+                    @Html.TextBox("Name", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class="form-group row" style="margin-left:20px;">
+                    <input type="submit" name="submit"  class="btn btn-primary" value="Say Hello" />
+                    <input type="submit" name="submit"  class="btn btn-primary" value="Program" />
+                </div>
+            </div>
+            <div class="form-group row" style="margin-top:20px;">
+                <label>@ViewBag.Message </label>
+            </div>
+        </div>
+        
+     }
+
+</body>
+</html>
